@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+  fetchUsers()
 
 })
 
@@ -7,9 +7,15 @@ const BASE_URL = "http://localhost:3000"
  // read - fetch users index
 
  function fetchUsers(){
-    fetch()
-    .then()
-    .then()
+    fetch(`${BASE_URL}/users`)
+    .then(resp => resp.json())
+    .then(users => {
+      // do something with json data
+      for (const user of users){
+        let u = new User(user.id, user.username, user.email)
+        u.renderUser();
+      }
+    })
  }
 
  // create - create a new user
