@@ -7,4 +7,18 @@ class User {
   }
  
     //render user instance    
+    
+    renderUser() {
+     let usersDiv = document.getElementById("users-container")
+     
+     usersDiv.innerHTML += 
+     
+     `
+     <ul>
+      <li>
+        <h3>User Name: ${this.username} Email: ${this.email} </h3>
+      </li>
+     </ul>
+     `
+    }
 }
